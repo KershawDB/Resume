@@ -1,0 +1,276 @@
+%------------------------------------------------------------------------------
+% CV in Latex
+% Author : Charles Rambo
+% Based off of: https://github.com/sb2nov/resume and Jake's Resume on Overleaf
+% Most recently updated version may be found at https://github.com/fizixmastr 
+% License : MIT
+%------------------------------------------------------------------------------
+
+%\documentclass[A4,11pt]{article}
+\documentclass[letterpaper,12pt]{article} %For use in US
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{tikz}
+\input{glyphtounicode}
+
+\begin{comment}
+I am by no means a professional when it comes to the CV's/resumes, I have
+received various trainings on how to write a CV and resume from my high 
+school, as well as the Austin College and University of Eastern Finland's
+career counseling departments. As I intend to share my CV as a template, I 
+feel that it is my responsibility to provide explanations of my work.
+\end{comment}
+
+
+%-----FONT OPTIONS-------------------------------------------------------------
+\begin{comment}
+The font of the document will impact not just how readable it is, but how it is
+perceived. In the "The Craft of Scientific Writing" by Michael Alley, shares a
+common fonts for publication as well as their use. I have chosen to use
+Palatino for its legibility, some others are given below. There is far too much
+about typography to discus here. Note: serif fonts have short projecting
+strokes, sans-serif fonts are sans (without) these strokes.
+\end{comment}
+
+
+% serif
+ \usepackage{palatino}
+% \usepackage{times} %This is the default as well
+% \usepackage{charter}
+
+% sans-serif
+% \usepackage{helvet}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+%-----PAGE SETUP---------------------------------------------------------------
+
+% Adjust margins
+%\addtolength{\oddsidemargin}{-1cm}
+%\addtolength{\evensidemargin}{-1cm}
+%\addtolength{\textwidth}{2cm}
+%\addtolength{\topmargin}{-1cm}
+%\addtolength{\textheight}{2cm}
+
+% Margins for US Letter size
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0cm}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{orange} \titlerule \vspace{-5pt}]
+
+% Ensure that .pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-----CUSTOM COMMANDS FOR FORMATTING SECTIONS----------------------------------
+\newcommand{\CVItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\CVSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \small#3 & \small #4 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\CVSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \text{\small#1} & \text{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\CVSubItem}[1]{\CVItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\CVSubHeadingListStart}{\begin{itemize}[leftmargin=0.5cm, label={}]}
+% \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]} % Uncomment for US
+\newcommand{\CVSubHeadingListEnd}{\end{itemize}}
+\newcommand{\CVItemListStart}{\begin{itemize}}
+\newcommand{\CVItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%------------------------------------------------------------------------------
+% CV STARTS HERE  %
+%------------------------------------------------------------------------------
+\begin{document}
+
+%-----HEADING------------------------------------------------------------------
+\begin{comment}
+In Europe it is common to include a picture of ones self in the CV. Select
+which heading appropriate for the document you are creating.
+\end{comment}
+
+\begin{minipage}[c]{0.05\textwidth}
+\-\
+\end{minipage}
+%\begin{minipage}[c]{0.2\textwidth}
+%\begin{tikzpicture}
+%    \clip (0,0) circle (1.75cm);
+%    \node at (0,-.7) {\includegraphics[width = 9cm]{portrait}}; 
+%    % if necessary the picture may be moved by changing the at (coordinates)
+%    % width defines the 'zoom' of the picture
+%\end{tikzpicture}
+%\hfill\vline\hfill
+%\end{minipage}
+%\begin{minipage}[c]{0.4\textwidth}
+%    \textbf{\Huge \scshape{Charles Rambo}} \\ \vspace{1pt} 
+%    % \scshape sets small capital letters, remove if desired
+%    \small{+1 123-456-7890} \\
+%    \href{mailto:you@provider.com}{\underline{you@provider.com}}\\
+%    % Be sure to use a professional *personal* email address
+%    \href{https://www.linkedin.com/in/charles-rambo/}{\underline{linkedin.com/in/charles-rambo}} \\
+%    % you should adjust you linked in profile name to be professional and recognizable
+%    \href{https://github.com/fizixmastr}{\underline{github.com/fizixmastr}}
+%\end{minipage}
+
+% Without picture
+\begin{center}
+    \textbf{\Huge \scshape Kaiser Cleburn} \\ \vspace{1pt} %\scshape sets small capital letters, remove if desired
+    \small (405)-230-2342 $|$ 
+    \href{mailto:kaiser.cleburn@protonmail.com}{kaiser.cleburn@protonmail.com} \\
+    % Be sure to use a professional *personal* email address
+	\url{www.linkedin.com/in/kaiser-cleburn}
+\end{center}
+
+
+
+\begin{comment}
+This CV was written for specifically for positions I was applying for in
+academia, and then modified to be a template.
+
+A standard CV is about two pages long where as a resume in the US is one page.
+sections can be added and removed here with this in mind. In my experience, 
+education, and applicable work experience and skills are the most import things
+to include on a resume. For a CV the Europass CV suggests the categories: Work
+Experience, Education and Training, Language Skills, Digital Skills,
+Communication and Interpersonal Skills, Conferences and Seminars, Creative Works
+Driver's License, Hobbies and Interests, Honors and Awards, Management and
+Leadership Skills, Networks and Memberships, Organizational Skills, Projects,
+Publications, Recommendations, Social and Political Activities, Volunteering.
+
+Your goal is to convey a who, what , when, where, why for every item you share. 
+The who is obviously you, but I believe the rest should be done in that order.
+For example below. An employer cares most about the degree held and typically 
+less about the institution or where it is located (This is still good 
+information though). Whatever order you choose be consistent throughout.
+\end{comment}
+
+%-----EDUCATION----------------------------------------------------------------
+\section{Education}
+  \CVSubHeadingListStart
+%    \CVSubheading % Example
+%      {Degree Achieved}{Years of Study}
+%      {Institution of Study}{Where it is located}
+    
+    \CVSubheading
+      {{Master of Science $|$ \emph{\small{Business Analytics and Data Science}}}}{Expected May 2023}
+      {Oklahoma State University}{Stillwater, Oklahoma}
+      \CVItemListStart
+        \CVItem{GPA: 3.63}
+      \CVItemListEnd
+    \CVSubheading
+      {{Bachelor of Science $|$ \emph{\small{Industrial Engineering and Management}}}}{Dec 2021}
+      {Oklahoma State University}{Stillwater, Oklahoma}
+      \CVItemListStart
+        \CVItem{GPA: 3.74}
+      \CVItemListEnd
+  \CVSubHeadingListEnd
+%-----Projects-----------------------------------------------------------------
+\section{Projects}
+  \CVSubHeadingListStart
+    \CVSubheading
+      {COVID Impact on Shipping}{Aug 2021 - Present}
+      {Project with JB Hunt Intermodal}{ }
+      \CVItemListStart
+        \CVItem{Conducted an anlysis to determine the impact COVID had on intermodal load volumes in Fall 2021}
+        \CVItem{Focusing on predicting actual load volumes using historical data and bid awards }
+      \CVItemListEnd
+    \CVSubheading
+      {Sustainable UTV}{Aug 2021 - Dec 2021}
+      {Interdiciplinary Senior Design Project}{ }
+      \CVItemListStart
+        \CVItem{Responsible for project management and scheduling for our team of 13}
+        \CVItem{Conducted ergonomic and human factors analysis for design of controls}
+      \CVItemListEnd
+  \CVSubHeadingListEnd
+%-----WORK EXPERIENCE----------------------------------------------------------
+\begin{comment}
+try to briefly explain what you did and why it is relevant to the position you
+are seeking
+\end{comment}
+
+\section{Work Experience}
+  \CVSubHeadingListStart
+%    \CVSubheading %Example
+%      {What you did}{When you worked there}
+%      {Who you worked for}{Where they are located}
+%      \CVItemListStart
+%        \CVItem{Why it is important to this employer}
+%      \CVItemListEnd
+
+    \CVSubheading
+      {Transit Bus Driver}{March 2019 -- July 2021, Jan 2022 -- Present}
+      {Department of Parking and Transportation, OSU}{Stillwater, OK}
+      \CVItemListStart
+        \CVItem{Responsible of inspecting and safely operating transit buses \\ for the university and the surrounding community}
+        \CVItem{Hold a class B CDL with a passenger endorsement}
+      \CVItemListEnd
+  \CVSubHeadingListEnd
+
+%-----HONORS AND AWARDS--------------------------------------------------------
+\section{Honors and Awards}
+  \CVSubHeadingListStart
+%    \CVSubheading %Example
+%      {What}{When}
+%      {Short Description}{}
+    \CVSubheading
+      {Oklahoma State Regents for Higher Education Academic Scholar}{Fall 2017}
+      {Merit based scholarship to study at OSU}{}
+    \CVSubheading
+      {Eagle Scout}{March 2014}
+      {Highest level of achievement within the Boy Scouts of America}{}
+  \CVSubHeadingListEnd
+
+%-----SKILLS-------------------------------------------------------------------
+\begin{comment}
+This section is compressed from the various skills sections that Euro CV
+recommends.
+\end{comment}
+
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.5cm, label={}]
+    \small{\item{
+     \textbf{Programming}{: Python (Matplotlib, Pandas), R} \\
+     \smallskip
+     \textbf{Document Creation}{: Microsoft Office Suite, \LaTeX, Jupyter Notebook, Markdown, MS Project} \\
+     \smallskip
+     \textbf{Data Analytics / Visualization}{: Python (scikit-learn, imbalanced-learn), JMP, KNIME, and Tableau with Exposure to SAS} \\
+    }}
+ \end{itemize}
+    
+%------------------------------------------------------------------------------
+\end{document}
